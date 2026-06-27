@@ -77,7 +77,10 @@ builder.Services.AddSwaggerGen(c =>
 const string FrontendCors = "frontend";
 builder.Services.AddCors(opt =>
     opt.AddPolicy(FrontendCors, p => p
-        .WithOrigins("http://localhost:3000")
+        .WithOrigins(
+            "http://localhost:3000",
+            "https://acopioya-frontend.vercel.app"
+        )
         .AllowAnyHeader()
         .AllowAnyMethod()));
 
